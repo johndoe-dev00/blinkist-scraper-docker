@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  blinkistscraper:
+    build: .
+    container_name: blinkistscraper
+    volumes:
+      - ./books:/code/books
+      - ./dump:/code/dump
+      - ./code:/code
+    environment:
+      - RESOLUTION=1500x700
+    ports:
+      - 8089:80
+
